@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SaudeMental</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-footer-bar>
+    <form padding #formpost="ngForm" class="card" style="width: 100%;">
+      <ion-card class="formLogin">
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input [(ngModel)]="pessoa.nome" type="text" name="nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Idade</ion-label>
+          <ion-input [(ngModel)]="pessoa.idade" type="text" name="idade"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="stacked">Raça/Cor</ion-label>
+          <ion-input [(ngModel)]="pessoa.racaCor" type="text" name="racaCor"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Nivel Mental</ion-label>
+          <ion-select [(ngModel)]="pessoa.saudeMental" name="saudeMental" value="" cancelText="Dismiss">
+            <ion-select-option value=""></ion-select-option>
+            
+           <a *ngFor="let nivel of nivelMental">
+            <ion-select-option [(ngModel)]="pessoa.saudeMental" name="saudeMental" value="{{nivel.id}}">{{nivel.status}}</ion-select-option>
+           </a>
+          </ion-select>
+        </ion-item>
+        <ion-section class="button">
+          <ion-button color="danger" (click)="cadastrar()">Cadastrar</ion-button>
+        </ion-section>
+      </ion-card>
+    </form>
+  </ion-footer-bar>
+</ion-content>
