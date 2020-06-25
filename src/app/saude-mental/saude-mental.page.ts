@@ -10,6 +10,8 @@ import { PessoaService } from '../pessoa.service';
 })
 export class SaudeMentalPage implements OnInit {
   pessoa: Pessoa = {} as Pessoa;
+  valor: number = {} as number;
+  valor2: number = {} as number;
   lista: Pessoa[] = [];
   nivelMental = [
     {
@@ -45,6 +47,11 @@ export class SaudeMentalPage implements OnInit {
   async cadastrar() {
     return await this.pessoaService.insert(this.pessoa)
   }
-
+  buscarID() {
+    this.pessoaService.getPessoaId(this.valor);
+  }
+  buscarRaca() {
+    this.pessoaService.getPessoaRaca(this.valor2);
+  }
 
 }

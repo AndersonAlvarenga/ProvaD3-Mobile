@@ -38,3 +38,13 @@
     </form>
   </ion-footer-bar>
 </ion-content>
+<ion-item>
+  <ion-label position="stacked">Digite o id</ion-label>
+  <ion-input type="text" [(ngModel)]="valor.valor"></ion-input>
+</ion-item>
+<ion-button (click)="buscarID()">Pesquisar por ID</ion-button>
+<ion-item>
+  <ion-label position="stacked">Digite a Raca</ion-label>
+  <ion-input type="text" [(ngModel)]="valor2.valor"></ion-input>
+</ion-item>
+<ion-button (click)="buscarRaca()">Pesquisar por Raça/Cor</ion-button>
